@@ -3,10 +3,20 @@ const todoInput = document.querySelector(".todoInput");
 const todoList = document.querySelector(".todo-list");
 const addnote = document.querySelector(".addnote");
 const section = document.querySelector("#section");
+const changeFilename = document.querySelector("#fileName");
 
 todoSubmit.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteItem);
 addnote.addEventListener("click", addNote);
+changeFilename.addEventListener("click", function(){
+    changeFilename.innerHTML= "Saved! ";
+    const form = document.createElement("form");
+    const input = document.createElement("input");
+    input.type = "text";
+    form.appendChild(input);
+    form.method = "post";
+    changeFilename.appendChild(form);
+});
 
 function addTodo(event){
     event.preventDefault(); 
@@ -58,7 +68,7 @@ function deleteItem(e){
 
 function addNote(){
     const addsection = document.createElement("section");
-    // addsection.classList.add("addsection");
+    addsection.classList.add("addsection");
     
     const notepad = document.createElement("div");
     notepad.classList.add("noteheader");

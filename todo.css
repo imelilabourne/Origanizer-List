@@ -31,9 +31,13 @@ section{
     height: 200px;
     display: block;
     background-color: #E8C9C9;
+    font-size: 1rem;
+}
+
+#section{
     margin-left: 450px;
     margin-top: 40px;
-    font-size: 1rem;
+    
 }
 
 .stickynote{
