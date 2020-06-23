@@ -6,21 +6,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./todo.css">
+    <link type="text/css" rel="stylesheet" href="./todo.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
 
 </head>
 <body>
     <header id="fileName">
         untitled
     </header>
+    
     <aside>
+        <div>
+            <button class="addnote"><i class="fas fa-plus"></i>Add Sticky Note</button>
+           </div>
         <div class="todoText">TO DO LIST</div>
         <form>
             <input type="text" class="todoInput"><button name="button" type="submit" class="todoSubmit">
                 <i class="fas fa-plus-square"></i>
             </button>
         </form>
+        
         <div class="weekly">
             WEEKLY TASKS
         </div>
@@ -29,17 +36,25 @@
             <ul class="todo-list"></ul>
         </div>
     </aside>
-    <!-- <div class="container"> -->
+    <div class="container">
+       
         <section draggable="true" id="section">
             <div class="noteheader">
-            <button class="addnote"><i class="fas fa-plus"></i></button>
         </div>
             <div class="stickynote">
                 <textarea name="" id="" cols="20" rows="9" placeholder="Write a Note..."></textarea>
             </div>
         </section>
-    <!-- </div> -->
+        <br>
+    </div>
 
-    <script src="./todo.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="./todo.js"></script>
+  <script>
+      $("#section").draggable({
+      });
+  </script>
 </body>
 </html>

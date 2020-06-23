@@ -9,7 +9,7 @@ aside{
     background-color: #C4C4C4;
     height: 100vh;
     text-align: center;
-    padding: 50px 0px;
+    padding: 0px;
 }
 
 body{
@@ -37,12 +37,11 @@ section{
 #section{
     margin-left: 450px;
     margin-top: 40px;
-    
 }
 
 .stickynote{
     opacity: .5;
-    margin: 10px;
+
 }
 
 .stickynote > textarea, .stickynote> textarea:active{
@@ -141,4 +140,11 @@ form button:hover{
 .fall{
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;
+}
+
+.addnote{
+    width: 400px;
+    border: none;
+    height: 40px;
+    background-color: rgb(191, 217, 218);
 }

@@ -9,14 +9,15 @@ todoSubmit.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteItem);
 addnote.addEventListener("click", addNote);
 changeFilename.addEventListener("click", function(){
-    changeFilename.innerHTML= "Saved! ";
+    changeFilename.innerHTML= "";
     const form = document.createElement("form");
     const input = document.createElement("input");
     input.type = "text";
+    input.placeholder="Enter new filename"
     form.appendChild(input);
     form.method = "post";
     changeFilename.appendChild(form);
-});
+}, {once : true});
 
 function addTodo(event){
     event.preventDefault(); 
@@ -77,9 +78,12 @@ function addNote(){
     stickynote.classList.add("stickynote");
     const text = document.createElement("textarea");
     text.placeholder = "Write a note..."
+    text.rows = 9;
+    text.cols = 20;
     stickynote.appendChild(text);
    
     addsection.appendChild(notepad);
     addsection.appendChild(stickynote);
     section.append(addsection);
+
 }
