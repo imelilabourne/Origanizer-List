@@ -8,26 +8,26 @@ const changeFilename = document.querySelector("#fileName");
 todoSubmit.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteItem);
 addnote.addEventListener("click", addNote);
-changeFilename.addEventListener("click", function() {
-    changeFilename.innerHTML = "";
-    const form = document.createElement("form");
-    const input = document.createElement("input");
-    input.type = "text";
-    input.placeholder = "Enter new filename";
-    input.id = "inputId";
-    const submit = document.createElement("input");
-    submit.type = "submit";
+// changeFilename.addEventListener("click", function() {
+//     changeFilename.innerHTML = "";
+//     const form = document.createElement("form");
+//     const input = document.createElement("input");
+//     input.type = "text";
+//     input.placeholder = "Enter new filename";
+//     input.id = "inputId";
+//     const submit = document.createElement("input");
+//     submit.type = "submit";
 
-    form.addEventListener("submit", (e) => { 
-        e.preventDefault();
-        changeFilename = input.innerHTML;
-        form.style.display = none;
-    });
-    
-    form.appendChild(input);
-    form.method = "post";
-    changeFilename.appendChild(form);
-}, { once: true });
+//     form.addEventListener("submit", (e) => {
+//         e.preventDefault();
+//         changeFilename = input.innerHTML;
+//         form.style.display = none;
+//     });
+
+//     form.appendChild(input);
+//     form.method = "post";
+//     changeFilename.appendChild(form);
+// }, { once: true });
 
 
 function addTodo(event) {
@@ -90,13 +90,14 @@ function addNote() {
     const stickynote = document.createElement("div");
     stickynote.classList.add("stickynote");
     const text = document.createElement("textarea");
-    text.placeholder = "Write a note..."
+    text.placeholder = " Write a note..."
     text.rows = 11;
     text.cols = 26;
     stickynote.appendChild(text);
-    // noteContainer.appendChild(notepad);
-    // noteContainer.appendChild(stickynote);
     addsection.appendChild(notepad);
     addsection.appendChild(stickynote);
     noteContainer.appendChild(addsection);
+    $(".addsectionSticky").draggable({
+        containment: "parent"
+    });
 }

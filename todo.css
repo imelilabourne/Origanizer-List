@@ -1,166 +1,182 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-aside{
-    /* position: fixed; */
-    width: 400px;
-    background-color: #C4C4C4;
-    height: 100%;
-    text-align: center;
-}
-
-body{
-    /* background-image: linear-gradient(120deg, #ffffff ,#3aa79d); */
-    font-family: 'Open Sans', sans-serif;
-    color:rgb(59, 53, 53);
-    font-size: 1.5rem;
-}
-
-.weekly{
-    background-color: #C0F5CC;
-    margin: 0 45px;
-    font-weight: 700;
-}
-
-section{
-    width: 200px;
-    height: 200px;
-    display: absolute;
-    background-color: #E8C9C9;
-    font-size: 1rem;
-    top: 40px;
-}
-
-.container{
-    width: 600px;
-    height: 90vh;
-}
-
-.main{
-    display: flex;
-}
-
-#section{
-    margin: 40px 40px;
-}
-@media only screen and (max-width: 600px) {
-    aside, .addnote {
-      width: 100px;
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
     }
-  }
-
-.stickynote{
-    opacity: .5;
-
-}
-
-.stickynote > textarea, .stickynote> textarea:active{
-    border: none;
-    background-color: #E8C9C9;
-}
-
-.noteheader{
-    width: 200px;
-    height: 35px;
-    background-color: #E76D6D;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 10px;
-    color: white;
-    font-size: .8rem;
-}
-
-form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 5vh;
-}
-
-header{
-    background-color: rgb(85, 148, 109);
-    position: absolute;
-    height:40px;
-    width: 100%;
-    top: 0;
-    text-align: center;
-}
-
-form button, form input{
-    padding: 0.5rem;
-    border: none;
-    font-size: 1rem;
-    background: white;
-}
-form button{
-    cursor: pointer;
-    color: rgb(5, 85, 25);
-    transition: all 0.4s ease;
-}
-
-form button:hover{
-    background: rgb(13, 231, 6);
-    color: white;
-}
-
-.todo-container{
-    display: flex;
-    justify-content: center;
     
-}
-
-.todo-div{
-    display: flex;
-    width: 310px;
-    background-color: white;
-    color: black;
-    margin: .5rem;
-    justify-content: space-between;
-    transition: all 1s ease-in;
-    font-size: 1.5rem;
-    align-items: center;
-}
-
-.todo-div li{
-    flex: 1;
-    list-style: none;
-}
-
-.checkedButton, .deleteButton{
-    width: 30px;
-    background-color: #5dce3a ;
-    border: none;
-    padding: .6rem;
-}
-
-.deleteButton{
-    background-color: #e76b6b;
-}
-
-.fa-trash, input>.fa-check{
-    pointer-events: none;
-}
-
-.completed{
-    opacity: .5;
-    text-decoration: line-through;
-}
-
-.fall{
-    transform: translateY(8rem) rotateZ(20deg);
-    opacity: 0;
-}
-
-.addnote{
-    width: 400px;
-    border: none;
-    height: 40px;
-    background-color: rgb(191, 217, 218);
-}
-
-.addsectionSticky{
-    margin-top: 300px;
-}
+    aside {
+        width: 400px;
+        background-color: #C4C4C4;
+        height: 94vh;
+        text-align: center;
+        margin-top: 40px;
+    }
+    
+    body {
+        /* background-image: linear-gradient(120deg, #ffffff ,#3aa79d); */
+        font-family: 'Open Sans', sans-serif;
+        color: rgb(59, 53, 53);
+        font-size: 1.5rem;
+    }
+    
+    .weekly {
+        background-color: #C0F5CC;
+        margin: 0 45px;
+        font-weight: 700;
+    }
+    
+    section {
+        width: 200px;
+        height: 200px;
+        /* display: absolute; */
+        background-color: #E8C9C9;
+        font-size: 1rem;
+    }
+    
+    .container {
+        width: 100%;
+        height: 95vh;
+        margin: 16px;
+        margin-top: 60px;
+    }
+    
+    .main {
+        display: flex;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        aside,
+        .addnote {
+            width: 100px;
+        }
+    }
+    
+    .stickynote {
+        opacity: .5;
+    }
+    
+    .stickynote>textarea,
+    .stickynote>textarea:active {
+        border: none;
+        background-color: #E8C9C9;
+    }
+    
+    .noteheader {
+        width: 200px;
+        height: 35px;
+        background-color: #E76D6D;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 10px;
+        color: white;
+        font-size: .8rem;
+    }
+    
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 5vh;
+    }
+    
+    header {
+        background-color: rgb(85, 148, 109);
+        position: absolute;
+        height: 40px;
+        width: 100%;
+        top: 0;
+        text-align: center;
+    }
+    
+    form button,
+    form input {
+        padding: 0.5rem;
+        border: none;
+        font-size: 1rem;
+        background: white;
+        margin: 10px 0px;
+    }
+    
+    form input {
+        width: 280px;
+    }
+    
+    form button {
+        cursor: pointer;
+        color: rgb(5, 85, 25);
+        transition: all 0.4s ease;
+    }
+    
+    form button:hover {
+        background: rgb(13, 231, 6);
+        color: white;
+    }
+    
+    .todo-container {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .todo-div {
+        display: flex;
+        width: 310px;
+        background-color: white;
+        color: black;
+        margin: .5rem;
+        justify-content: space-between;
+        transition: all 1s ease-in;
+        font-size: 1.5rem;
+        align-items: center;
+    }
+    
+    .todo-div li {
+        flex: 1;
+        list-style: none;
+    }
+    
+    .checkedButton,
+    .deleteButton {
+        width: 30px;
+        background-color: #5dce3a;
+        border: none;
+        padding: .6rem;
+    }
+    
+    .deleteButton {
+        background-color: #e76b6b;
+    }
+    
+    .fa-trash,
+    input>.fa-check {
+        pointer-events: none;
+    }
+    
+    .completed {
+        opacity: .5;
+        text-decoration: line-through;
+    }
+    
+    .fall {
+        transform: translateY(8rem) rotateZ(20deg);
+        opacity: 0;
+    }
+    
+    .addnote {
+        width: 400px;
+        border: none;
+        height: 40px;
+        background-color: rgb(191, 217, 218);
+    }
+    
+    .addsectionSticky {
+        margin-left: 10px;
+    }
+    
+    .tasks button {
+        width: 300px;
+        height: 30px;
+        background-color: #E8C9C9;
+        border-radius: 5px;
+        border: #ca3030 solid 1px;
+    }
