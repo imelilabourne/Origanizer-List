@@ -4,12 +4,11 @@
     box-sizing: border-box;
 }
 aside{
-    position: fixed;
+    /* position: fixed; */
     width: 400px;
     background-color: #C4C4C4;
-    height: 100vh;
+    height: 100%;
     text-align: center;
-    padding: 0px;
 }
 
 body{
@@ -17,7 +16,6 @@ body{
     font-family: 'Open Sans', sans-serif;
     color:rgb(59, 53, 53);
     font-size: 1.5rem;
-    height: 100vh;
 }
 
 .weekly{
@@ -29,15 +27,29 @@ body{
 section{
     width: 200px;
     height: 200px;
-    display: block;
+    display: absolute;
     background-color: #E8C9C9;
     font-size: 1rem;
+    top: 40px;
+}
+
+.container{
+    width: 600px;
+    height: 90vh;
+}
+
+.main{
+    display: flex;
 }
 
 #section{
-    margin-left: 450px;
-    margin-top: 40px;
+    margin: 40px 40px;
 }
+@media only screen and (max-width: 600px) {
+    aside, .addnote {
+      width: 100px;
+    }
+  }
 
 .stickynote{
     opacity: .5;
@@ -65,22 +77,22 @@ form{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 10vh;
+    min-height: 5vh;
 }
 
 header{
-    padding: 10px 0px;
     background-color: rgb(85, 148, 109);
-    position: block;
-    display: flex;
-    justify-content: center;
-    /* width: 100%; */
+    position: absolute;
+    height:40px;
+    width: 100%;
+    top: 0;
+    text-align: center;
 }
 
 form button, form input{
     padding: 0.5rem;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1rem;
     background: white;
 }
 form button{
@@ -147,4 +159,8 @@ form button:hover{
     border: none;
     height: 40px;
     background-color: rgb(191, 217, 218);
+}
+
+.addsectionSticky{
+    margin-top: 300px;
 }

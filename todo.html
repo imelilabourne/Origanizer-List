@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <header id="fileName">
+    <header id="fileName" style="font-size: 1rem; display: flex; align-items: center; justify-content: center;">
         untitled
     </header>
-
+    <div class="main">
     <aside>
         <div>
             <button class="addnote"><i class="fas fa-plus"></i>Add Sticky Note</button>
@@ -38,24 +38,26 @@
             <ul class="todo-list"></ul>
         </div>
     </aside>
-    <div class="container" id="noteDiv">
-        <section draggable="true" id="section" class="first">
+    <div class="container">
+        <!-- <section draggable="true" id="section" class="first">
             <div class="noteheader">
             </div>
             <div class="stickynote">
-                <textarea name="" id="" cols="20" rows="9" placeholder="Write a Note..."></textarea>
+                <textarea name="" id="" cols="26" rows="11" placeholder="Write a Note..."></textarea>
             </div>
         </section>
-        <br>
+        <br> -->
     </div>
-
+</div>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./todo.js"></script>
     <script>
-        $("#section").draggable({});
-        $("#noteDiv").draggable({});
+        $("#section").draggable({
+            containment: "parent"
+        });
+        // $(".container").draggable({});
     </script>
 </body>
 

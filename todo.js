@@ -13,11 +13,22 @@ changeFilename.addEventListener("click", function() {
     const form = document.createElement("form");
     const input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "Enter new filename"
+    input.placeholder = "Enter new filename";
+    input.id = "inputId";
+    const submit = document.createElement("input");
+    submit.type = "submit";
+
+    form.addEventListener("submit", (e) => { 
+        e.preventDefault();
+        changeFilename = input.innerHTML;
+        form.style.display = none;
+    });
+    
     form.appendChild(input);
     form.method = "post";
     changeFilename.appendChild(form);
 }, { once: true });
+
 
 function addTodo(event) {
     event.preventDefault();
@@ -66,13 +77,13 @@ function deleteItem(e) {
 }
 
 
-const noteContainer = document.querySelector("#noteDiv");
+const noteContainer = document.querySelector(".container");
 
 function addNote() {
-    const id = 0;
-    const addsection = document.createElement("section");
-    addsection.classList.add("addsection");
+    event.preventDefault();
 
+    const addsection = document.createElement("section");
+    addsection.classList = "addsectionSticky";
     const notepad = document.createElement("div");
     notepad.classList.add("noteheader");
 
@@ -80,10 +91,11 @@ function addNote() {
     stickynote.classList.add("stickynote");
     const text = document.createElement("textarea");
     text.placeholder = "Write a note..."
-    text.rows = 9;
-    text.cols = 20;
+    text.rows = 11;
+    text.cols = 26;
     stickynote.appendChild(text);
-
+    // noteContainer.appendChild(notepad);
+    // noteContainer.appendChild(stickynote);
     addsection.appendChild(notepad);
     addsection.appendChild(stickynote);
     noteContainer.appendChild(addsection);
