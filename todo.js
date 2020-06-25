@@ -8,22 +8,22 @@ const changeFilename = document.querySelector("#fileName");
 todoSubmit.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteItem);
 addnote.addEventListener("click", addNote);
-changeFilename.addEventListener("click", function(){
-    changeFilename.innerHTML= "";
+changeFilename.addEventListener("click", function() {
+    changeFilename.innerHTML = "";
     const form = document.createElement("form");
     const input = document.createElement("input");
     input.type = "text";
-    input.placeholder="Enter new filename"
+    input.placeholder = "Enter new filename"
     form.appendChild(input);
     form.method = "post";
     changeFilename.appendChild(form);
-}, {once : true});
+}, { once: true });
 
-function addTodo(event){
-    event.preventDefault(); 
+function addTodo(event) {
+    event.preventDefault();
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo-div");
-    
+
     const todoItem = document.createElement("li");
     todoItem.innerText = todoInput.value;
     todoItem.classList.add("todo-item");
@@ -40,9 +40,7 @@ function addTodo(event){
     deleteButton.innerHTML = '<li class="fas fa-trash"></li>'
     todoDiv.appendChild(deleteButton);
 
-    if(todoInput.value === ""){
-    }
-    else{
+    if (todoInput.value === "") {} else {
         todoList.appendChild(todoDiv);
     }
     todoInput.value = "";
@@ -51,29 +49,33 @@ function addTodo(event){
 
 }
 
-function deleteItem(e){
+function deleteItem(e) {
     const item = e.target;
-    if (item.classList[0] === "deleteButton"){
+    if (item.classList[0] === "deleteButton") {
         const li = item.parentElement;
         li.classList.add("fall");
-        setTimeout(()=> {
+        setTimeout(() => {
             li.remove();
         }, 400);
     }
 
-    if (item.classList[0] === "checkedButton"){
+    if (item.classList[0] === "checkedButton") {
         const li = item.parentElement;
         li.classList.toggle("completed");
     }
 }
 
-function addNote(){
+
+const noteContainer = document.querySelector("#noteDiv");
+
+function addNote() {
+    const id = 0;
     const addsection = document.createElement("section");
     addsection.classList.add("addsection");
-    
+
     const notepad = document.createElement("div");
     notepad.classList.add("noteheader");
-    
+
     const stickynote = document.createElement("div");
     stickynote.classList.add("stickynote");
     const text = document.createElement("textarea");
@@ -81,9 +83,8 @@ function addNote(){
     text.rows = 9;
     text.cols = 20;
     stickynote.appendChild(text);
-   
+
     addsection.appendChild(notepad);
     addsection.appendChild(stickynote);
-    section.append(addsection);
-
+    noteContainer.appendChild(addsection);
 }

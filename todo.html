@@ -38,9 +38,8 @@
             <ul class="todo-list"></ul>
         </div>
     </aside>
-    <div class="container">
-
-        <section draggable="true" id="section">
+    <div class="container" id="noteDiv">
+        <section draggable="true" id="section" class="first">
             <div class="noteheader">
             </div>
             <div class="stickynote">
@@ -56,6 +55,7 @@
     <script src="./todo.js"></script>
     <script>
         $("#section").draggable({});
+        $("#noteDiv").draggable({});
     </script>
 </body>
 
