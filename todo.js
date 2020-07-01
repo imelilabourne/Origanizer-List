@@ -3,7 +3,8 @@ const todoInput = document.querySelector(".todoInput");
 const todoList = document.querySelector(".todo-list");
 const addnote = document.querySelector(".addnote");
 const section = document.querySelector("#section");
-const changeFilename = document.querySelector("#fileName");
+let changeFilename = document.querySelector("#fileName");
+const noteContainer = document.querySelector(".container");
 
 todoSubmit.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteItem);
@@ -20,8 +21,9 @@ changeFilename.addEventListener("click", function() {
 
     form.addEventListener("submit", (e) => { 
         e.preventDefault();
-        changeFilename = input.innerHTML;
-        form.style.display = none;
+        changeFilename.innerHTML = input.value;
+        form.style.display = "none";
+        
     });
     
     form.appendChild(input);
@@ -32,6 +34,13 @@ changeFilename.addEventListener("click", function() {
 
 function addTodo(event) {
     event.preventDefault();
+    const shapeContainer = document.createElement("div");
+    shapeContainer.classList.add("taskDiv");
+    noteContainer.appendChild(shapeContainer);
+    const shapeHeader = document.createElement("h5");
+    shapeContainer.appendChild(shapeHeader);
+    shapeHeader.innerHTML = todoInput.value;
+
     const todoDiv = document.createElement("div");
     todoDiv.classList.add("todo-div");
 
@@ -55,7 +64,10 @@ function addTodo(event) {
         todoList.appendChild(todoDiv);
     }
     todoInput.value = "";
-
+    $(noteContainer).sortable({
+        delay: 300,
+        distance: 50
+    });
 
 
 }
@@ -76,8 +88,7 @@ function deleteItem(e) {
     }
 }
 
-
-const noteContainer = document.querySelector(".container");
+const taskDiv = document.querySelector(".taskDiv");
 
 function addNote() {
     event.preventDefault();
@@ -90,13 +101,18 @@ function addNote() {
     const stickynote = document.createElement("div");
     stickynote.classList.add("stickynote");
     const text = document.createElement("textarea");
-    text.placeholder = "Write a note..."
+    text.placeholder = " Write a note..."
     text.rows = 11;
     text.cols = 26;
     stickynote.appendChild(text);
-    // noteContainer.appendChild(notepad);
-    // noteContainer.appendChild(stickynote);
     addsection.appendChild(notepad);
     addsection.appendChild(stickynote);
     noteContainer.appendChild(addsection);
+    $(".addsectionSticky").draggable({
+        containment: "parent",
+        snap: true,
+        // snapTolerance: 50,
+        // grid: [220 ,220]
+    });
+    
 }
