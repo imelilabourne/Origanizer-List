@@ -9,6 +9,7 @@ const noteContainer = document.querySelector(".container");
 todoSubmit.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteItem);
 addnote.addEventListener("click", addNote);
+<<<<<<< HEAD
 changeFilename.addEventListener("click", function() {
     changeFilename.innerHTML = "";
     const form = document.createElement("form");
@@ -30,6 +31,28 @@ changeFilename.addEventListener("click", function() {
     form.method = "post";
     changeFilename.appendChild(form);
 }, { once: true });
+=======
+// changeFilename.addEventListener("click", function() {
+//     changeFilename.innerHTML = "";
+//     const form = document.createElement("form");
+//     const input = document.createElement("input");
+//     input.type = "text";
+//     input.placeholder = "Enter new filename";
+//     input.id = "inputId";
+//     const submit = document.createElement("input");
+//     submit.type = "submit";
+
+//     form.addEventListener("submit", (e) => {
+//         e.preventDefault();
+//         changeFilename = input.innerHTML;
+//         form.style.display = none;
+//     });
+
+//     form.appendChild(input);
+//     form.method = "post";
+//     changeFilename.appendChild(form);
+// }, { once: true });
+>>>>>>> a3cca5f05710d2b4a54d9bd63d8b66239ce82838
 
 
 function addTodo(event) {
@@ -109,10 +132,15 @@ function addNote() {
     addsection.appendChild(stickynote);
     noteContainer.appendChild(addsection);
     $(".addsectionSticky").draggable({
+<<<<<<< HEAD
         containment: "parent",
         snap: true,
         // snapTolerance: 50,
         // grid: [220 ,220]
     });
     
+=======
+        containment: "parent"
+    });
+>>>>>>> a3cca5f05710d2b4a54d9bd63d8b66239ce82838
 }

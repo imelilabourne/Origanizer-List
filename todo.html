@@ -15,30 +15,38 @@
 
 <body>
     <header id="fileName" style="font-size: 1rem; display: flex; align-items: center; justify-content: center;">
-        untitled
+        <p id="">untitled</p>
+        <!-- <input type="text" id=""> -->
     </header>
     <div class="main">
-    <aside>
-        <div>
-            <button class="addnote"><i class="fas fa-plus"></i>Add Sticky Note</button>
-        </div>
-        <div class="todoText">TO DO LIST</div>
-        <form>
-            <input type="text" class="todoInput"><button name="button" type="submit" class="todoSubmit">
+        <aside>
+            <div>
+                <button class="addnote"><i class="fas fa-plus"></i>Add Sticky Note</button>
+            </div>
+            <div class="todoText">TO DO LIST</div>
+            <form>
+                <input type="text" class="todoInput"><button name="button" type="submit" class="todoSubmit">
                 <i class="fas fa-plus-square"></i>
             </button>
-        </form>
+            </form>
+            <div class="tasks">
+                <div class="weekly">
+                    WEEKLY TASKS
+                </div>
+                <button>Mondays</button>
+                <button>Tuesdays</button>
+                <button>Wednesdays</button>
+                <button>Thursdays</button>
+                <button>Fridays</button>
+                <button>Satudays</button>
+            </div>
 
-        <div class="weekly">
-            WEEKLY TASKS
-        </div>
-
-        <div class="todo-container">
-            <ul class="todo-list"></ul>
-        </div>
-    </aside>
-    <div class="container">
-        <!-- <section draggable="true" id="section" class="first">
+            <div class="todo-container">
+                <ul class="todo-list"></ul>
+            </div>
+        </aside>
+        <div class="container">
+            <!-- <section draggable="true" id="section" class="first">
             <div class="noteheader">
             </div>
             <div class="stickynote">
@@ -46,19 +54,30 @@
             </div>
         </section>
         <br> -->
+        </div>
     </div>
+<<<<<<< HEAD
     <div class="stickyContainer">
 
     </div>
 </div>
+=======
+>>>>>>> a3cca5f05710d2b4a54d9bd63d8b66239ce82838
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="./todo.js"></script>
+<<<<<<< HEAD
     <script>
         // $("section").draggable();
+=======
+    <!-- <script>
+        $("section").draggable({
+            containment: "parent"
+        });
+>>>>>>> a3cca5f05710d2b4a54d9bd63d8b66239ce82838
         // $(".container").draggable({});
-    </script>
+    </script> -->
 </body>
 
 </html>
