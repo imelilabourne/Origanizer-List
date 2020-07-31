@@ -42,8 +42,8 @@ changeFilename.addEventListener("click", function() {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        changeFilename = input.innerHTML;
-        form.style.display = none;
+        changeFilename.innerHTML = input.value;
+        alert("filename saved hehe");
     });
 
     form.appendChild(input);
